@@ -1,17 +1,18 @@
 #include <iostream>
 using namespace std;
 void calc(float grade, float hours, float& total_grade);
+void print(float& total_grade, float& total_hours);
 int main()
 {
     cout << "\t\t\tEnter -1 To finish.\n\n";
-    float grade, total_grade=0, hours, counter = 1, total_hours = 0;
+    float grade, total_grade = 0, hours, counter = 1, total_hours = 0;
     bool condition = true;
-    
-	while (condition)
-	{
-       
+
+    while (condition)
+    {
+
         cout << "===============================================\n";
-        cout << "Enter your Subject "<<counter <<" grade: ";
+        cout << "Enter your Subject " << counter << " grade: ";
         cin >> grade;
         if (grade == -1)
             break;
@@ -21,20 +22,30 @@ int main()
         counter++;
         //===========================================================
         calc(grade, hours, total_grade);
-        
-	}
+
+    }
+    print(total_grade, total_hours);
+
+}
+
+void print(float &total_grade, float &total_hours)
+{
     cout << "===============================================\n";
     cout << "Your New GPA= " << (total_grade / total_hours) << endl;
     cout << "Total Houres: " << total_hours << endl;
-    cout << "\n\t\t\t\tGood Luck " ;
-    char ch = 1;
+    cout << "\n\t\t\t\t Good Luck ";
+    cout << "\n\t\t\tMade with ";
+    char ch = 3;
+    cout << ch;
+    cout << " by Bishoy Adel ";
+    ch = 1;
     cout << ch << "\t";
     cout << "\n";
     cout << "===============================================\n";
 }
 
 
-void calc(float grade, float hours, float &total_grade) {
+void calc(float grade, float hours, float& total_grade) {
     if (grade >= 90) {
         total_grade += (4 * hours);
     }
